@@ -3,8 +3,8 @@ import re
 from string import punctuation
 
 
-def load_passwords_black_list(filepath='./pass.txt'):
-    with open(filepath, 'r') as black_list_passwords:
+def load_passwords_black_list():
+    with open('./pass.txt', 'r') as black_list_passwords:
         return black_list_passwords.read().split('\n')
 
 
