@@ -25,7 +25,7 @@ def password_strength_check(password):
     return strength_points
 
 
-def get_password_strength(strength_points):
+def print_password_strength(strength_points):
     if strength_points == 1:
         print('Very weak password')
     elif 1 < strength_points < 5:
@@ -39,4 +39,4 @@ def get_password_strength(strength_points):
 if __name__ == '__main__':
     password = sys.argv[1]
     strength_points = password_strength_check(password)
-    get_password_strength(strength_points)
+    print_password_strength(strength_points)
