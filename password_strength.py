@@ -8,8 +8,7 @@ def load_passwords_black_list():
         return black_list_passwords.read().split('\n')
 
 
-def password_strength_check(password):
-    password_blacklist = load_passwords_black_list()
+def password_strength_check(password, password_blacklist):
     strength_points = 0
 
     if re.search(r"\d", password):
@@ -38,5 +37,6 @@ def print_password_strength(strength_points):
 
 if __name__ == '__main__':
     password = sys.argv[1]
-    strength_points = password_strength_check(password)
+    password_blacklist = load_passwords_black_list()
+    strength_points = password_strength_check(password, password_blacklist)
     print_password_strength(strength_points)
